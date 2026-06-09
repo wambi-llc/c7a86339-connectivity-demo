@@ -11,90 +11,90 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0f172a; color: #e2e8f0;
+      background: #f8fafc; color: #1e293b;
     }
     #cy { width: 100vw; height: 100vh; transition: width 0.2s; }
     body.sidebar-open #cy { width: calc(100vw - 360px); }
 
     #header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 10;
-      background: rgba(15,23,42,0.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid #1e293b; padding: 10px 20px;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0; padding: 10px 20px;
       display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
       transition: transform 0.3s;
     }
     body.chrome-hidden #header { transform: translateY(-100%); }
     body.chrome-hidden #controls { transform: translateY(-200%); }
-    #header h1 { font-size: 15px; font-weight: 600; color: #f1f5f9; }
+    #header h1 { font-size: 15px; font-weight: 600; color: #0f172a; }
     .tag { font-size: 11px; padding: 2px 10px; border-radius: 12px; font-weight: 500; display: inline-block; }
-    .t-info { background: #1e293b; color: #93c5fd; border: 1px solid #334155; }
-    .t-pass { background: #064e3b; color: #6ee7b7; border: 1px solid #065f46; }
-    .t-warn { background: #78350f; color: #fbbf24; border: 1px solid #92400e; }
-    .t-fail { background: #7f1d1d; color: #fca5a5; border: 1px solid #991b1b; }
+    .t-info { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .t-pass { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+    .t-warn { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .t-fail { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
 
     #controls {
       position: fixed; top: 46px; left: 0; right: 0; z-index: 9;
-      background: rgba(15,23,42,0.92); border-bottom: 1px solid #1e293b;
+      background: rgba(255,255,255,0.92); border-bottom: 1px solid #e2e8f0;
       padding: 8px 20px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
       font-size: 12px; transition: transform 0.3s;
     }
-    #controls label { color: #94a3b8; font-weight: 500; }
-    #controls select, #controls input[type="range"] { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; border-radius: 4px; padding: 3px 8px; font-size: 11px; }
-    #controls .range-val { color: #93c5fd; font-weight: 600; min-width: 24px; display: inline-block; }
+    #controls label { color: #475569; font-weight: 500; }
+    #controls select, #controls input[type="range"] { background: #fff; color: #1e293b; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 8px; font-size: 11px; }
+    #controls .range-val { color: #4f46e5; font-weight: 600; min-width: 24px; display: inline-block; }
     #controls button {
-      background: #334155; color: #e2e8f0; border: 1px solid #475569; border-radius: 4px;
+      background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px;
       padding: 4px 12px; font-size: 11px; cursor: pointer; font-weight: 500;
     }
-    #controls button:hover { background: #475569; }
+    #controls button:hover { background: #e2e8f0; }
     #controls button.active { background: #4f46e5; border-color: #6366f1; color: #fff; }
 
     #sidebar {
       position: fixed; top: 0; right: 0; bottom: 0; width: 360px; z-index: 20;
-      background: #1e293b; border-left: 1px solid #334155;
-      box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+      background: #fff; border-left: 1px solid #e2e8f0;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.08);
       transform: translateX(100%); transition: transform 0.2s;
       overflow-y: auto; font-size: 13px; padding: 16px;
     }
     body.sidebar-open #sidebar { transform: translateX(0); }
-    #sidebar h2 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #f1f5f9; }
-    #sidebar .close { position: absolute; top: 12px; right: 14px; cursor: pointer; font-size: 18px; color: #64748b; }
-    #sidebar .close:hover { color: #f1f5f9; }
+    #sidebar h2 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #0f172a; }
+    #sidebar .close { position: absolute; top: 12px; right: 14px; cursor: pointer; font-size: 18px; color: #94a3b8; }
+    #sidebar .close:hover { color: #0f172a; }
     #sidebar .row { margin: 5px 0; display: flex; gap: 6px; }
-    #sidebar .lbl { color: #93c5fd; font-weight: 600; min-width: 100px; font-size: 12px; }
-    #sidebar .val { color: #cbd5e1; font-size: 12px; word-break: break-word; }
-    #sidebar hr { border: none; border-top: 1px solid #334155; margin: 10px 0; }
-    #sidebar .bar-container { height: 6px; background: #334155; border-radius: 3px; margin-top: 4px; overflow: hidden; }
+    #sidebar .lbl { color: #4f46e5; font-weight: 600; min-width: 100px; font-size: 12px; }
+    #sidebar .val { color: #475569; font-size: 12px; word-break: break-word; }
+    #sidebar hr { border: none; border-top: 1px solid #e2e8f0; margin: 10px 0; }
+    #sidebar .bar-container { height: 6px; background: #e2e8f0; border-radius: 3px; margin-top: 4px; overflow: hidden; }
     #sidebar .bar-fill { height: 100%; border-radius: 3px; }
     #sidebar .conn-list { margin: 6px 0; max-height: 200px; overflow-y: auto; }
     #sidebar .conn-item { padding: 4px 8px; border-radius: 4px; margin: 2px 0; font-size: 11px; display: flex; justify-content: space-between; }
-    #sidebar .conn-item:hover { background: #334155; cursor: pointer; }
+    #sidebar .conn-item:hover { background: #f1f5f9; cursor: pointer; }
     #sidebar .conn-badge { background: #4f46e5; color: #fff; border-radius: 8px; padding: 1px 6px; font-size: 10px; font-weight: 600; }
     #sidebar .conn-badge.cross { background: #d97706; }
 
     #legend {
       position: fixed; bottom: 16px; left: 16px; z-index: 10;
-      background: rgba(30,41,59,0.95); border: 1px solid #334155;
+      background: rgba(255,255,255,0.95); border: 1px solid #e2e8f0;
       border-radius: 8px; padding: 12px 16px; font-size: 11px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
-    .leg { display: flex; align-items: center; gap: 6px; margin: 3px 0; color: #94a3b8; }
+    .leg { display: flex; align-items: center; gap: 6px; margin: 3px 0; color: #475569; }
     .ldot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
     .ledge { width: 20px; height: 0; display: inline-block; margin-right: -4px; }
 
     #stats-panel {
       position: fixed; bottom: 16px; right: 16px; z-index: 10;
-      background: rgba(30,41,59,0.95); border: 1px solid #334155;
+      background: rgba(255,255,255,0.95); border: 1px solid #e2e8f0;
       border-radius: 8px; padding: 12px 16px; font-size: 11px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.2); min-width: 180px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06); min-width: 180px;
       transition: right 0.2s;
     }
     body.sidebar-open #stats-panel { right: 376px; }
     #stats-panel .stat-row { display: flex; justify-content: space-between; margin: 3px 0; }
-    #stats-panel .stat-label { color: #94a3b8; }
-    #stats-panel .stat-value { color: #93c5fd; font-weight: 600; }
+    #stats-panel .stat-label { color: #475569; }
+    #stats-panel .stat-value { color: #4f46e5; font-weight: 600; }
 
     .highlight-ring { }
-    .ghost-count { font-size: 11px; color: #ef4444; margin-left: 6px; font-weight: 600; }
+    .ghost-count { font-size: 11px; color: #dc2626; margin-left: 6px; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -117,7 +117,7 @@ const DATA = {
     "removedSmallClusters": 111,
     "teamCount": 46,
     "teamGroupType": "Team",
-    "generatedAt": "2026-06-09T13:54:56.164Z"
+    "generatedAt": "2026-06-09T14:24:50.206Z"
   },
   "nodes": [
     {
@@ -146,7 +146,7 @@ const DATA = {
       "reactions": 91,
       "challengesCompleted": 21,
       "loginCount": 395,
-      "lastLogin": "2026-05-28T13:54:54.664Z",
+      "lastLogin": "2026-05-28T14:24:48.676Z",
       "outreach": 331,
       "groups": [
         {
@@ -214,7 +214,7 @@ const DATA = {
       "reactions": 187,
       "challengesCompleted": 36,
       "loginCount": 386,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 244,
       "groups": [
         {
@@ -282,7 +282,7 @@ const DATA = {
       "reactions": 98,
       "challengesCompleted": 30,
       "loginCount": 415,
-      "lastLogin": "2026-06-07T13:54:54.664Z",
+      "lastLogin": "2026-06-07T14:24:48.676Z",
       "outreach": 148,
       "groups": [
         {
@@ -344,7 +344,7 @@ const DATA = {
       "reactions": 88,
       "challengesCompleted": 21,
       "loginCount": 398,
-      "lastLogin": "2026-06-08T13:54:54.664Z",
+      "lastLogin": "2026-06-08T14:24:48.676Z",
       "outreach": 171,
       "groups": [
         {
@@ -412,7 +412,7 @@ const DATA = {
       "reactions": 1,
       "challengesCompleted": 30,
       "loginCount": 384,
-      "lastLogin": "2026-06-01T13:54:54.664Z",
+      "lastLogin": "2026-06-01T14:24:48.676Z",
       "outreach": 153,
       "groups": [
         {
@@ -468,7 +468,7 @@ const DATA = {
       "reactions": 22,
       "challengesCompleted": 13,
       "loginCount": 306,
-      "lastLogin": "2026-06-03T13:54:54.664Z",
+      "lastLogin": "2026-06-03T14:24:48.676Z",
       "outreach": 74,
       "groups": [
         {
@@ -524,7 +524,7 @@ const DATA = {
       "reactions": 9,
       "challengesCompleted": 31,
       "loginCount": 393,
-      "lastLogin": "2026-06-09T13:54:54.664Z",
+      "lastLogin": "2026-06-09T14:24:48.676Z",
       "outreach": 147,
       "groups": [
         {
@@ -574,7 +574,7 @@ const DATA = {
       "reactions": 1,
       "challengesCompleted": 20,
       "loginCount": 388,
-      "lastLogin": "2026-06-08T13:54:54.664Z",
+      "lastLogin": "2026-06-08T14:24:48.676Z",
       "outreach": 124,
       "groups": [
         {
@@ -636,7 +636,7 @@ const DATA = {
       "reactions": 18,
       "challengesCompleted": 14,
       "loginCount": 388,
-      "lastLogin": "2026-06-01T13:54:54.664Z",
+      "lastLogin": "2026-06-01T14:24:48.676Z",
       "outreach": 134,
       "groups": [
         {
@@ -692,13 +692,13 @@ const DATA = {
       "pageRank": 1,
       "sendInfluence": 124.9,
       "receiveInfluence": 0.8,
-      "influenceScore": 171.3,
-      "engagementBonus": 44.7,
-      "comments": 35,
-      "reactions": 213,
+      "influenceScore": 171,
+      "engagementBonus": 44.4,
+      "comments": 34,
+      "reactions": 212,
       "challengesCompleted": 54,
       "loginCount": 387,
-      "lastLogin": "2026-06-02T13:54:54.664Z",
+      "lastLogin": "2026-06-02T14:24:48.676Z",
       "outreach": 120,
       "groups": [
         {
@@ -760,7 +760,7 @@ const DATA = {
       "reactions": 9,
       "challengesCompleted": 10,
       "loginCount": 409,
-      "lastLogin": "2026-05-29T13:54:54.664Z",
+      "lastLogin": "2026-05-29T14:24:48.676Z",
       "outreach": 138,
       "groups": [
         {
@@ -822,7 +822,7 @@ const DATA = {
       "reactions": 12,
       "challengesCompleted": 19,
       "loginCount": 320,
-      "lastLogin": "2026-06-04T13:54:54.664Z",
+      "lastLogin": "2026-06-04T14:24:48.676Z",
       "outreach": 120,
       "groups": [
         {
@@ -884,7 +884,7 @@ const DATA = {
       "reactions": 92,
       "challengesCompleted": 13,
       "loginCount": 410,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 99,
       "groups": [
         {
@@ -952,7 +952,7 @@ const DATA = {
       "reactions": 4,
       "challengesCompleted": 5,
       "loginCount": 357,
-      "lastLogin": "2026-05-28T13:54:54.664Z",
+      "lastLogin": "2026-05-28T14:24:48.676Z",
       "outreach": 115,
       "groups": [
         {
@@ -1008,7 +1008,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 2,
       "loginCount": 353,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 126,
       "groups": [
         {
@@ -1076,7 +1076,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 4,
       "loginCount": 135,
-      "lastLogin": "2026-06-01T13:54:54.664Z",
+      "lastLogin": "2026-06-01T14:24:48.676Z",
       "outreach": 43,
       "groups": [
         {
@@ -1138,7 +1138,7 @@ const DATA = {
       "reactions": 20,
       "challengesCompleted": 5,
       "loginCount": 241,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 35,
       "groups": [
         {
@@ -1194,7 +1194,7 @@ const DATA = {
       "reactions": 1,
       "challengesCompleted": 11,
       "loginCount": 327,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 80,
       "groups": [
         {
@@ -1256,7 +1256,7 @@ const DATA = {
       "reactions": 43,
       "challengesCompleted": 14,
       "loginCount": 343,
-      "lastLogin": "2026-06-07T13:54:54.664Z",
+      "lastLogin": "2026-06-07T14:24:48.676Z",
       "outreach": 56,
       "groups": [
         {
@@ -1318,7 +1318,7 @@ const DATA = {
       "reactions": 2,
       "challengesCompleted": 21,
       "loginCount": 285,
-      "lastLogin": "2026-05-31T13:54:54.664Z",
+      "lastLogin": "2026-05-31T14:24:48.676Z",
       "outreach": 90,
       "groups": [
         {
@@ -1380,7 +1380,7 @@ const DATA = {
       "reactions": 6,
       "challengesCompleted": 46,
       "loginCount": 383,
-      "lastLogin": "2026-06-07T13:54:54.664Z",
+      "lastLogin": "2026-06-07T14:24:48.676Z",
       "outreach": 80,
       "groups": [
         {
@@ -1448,7 +1448,7 @@ const DATA = {
       "reactions": 16,
       "challengesCompleted": 18,
       "loginCount": 397,
-      "lastLogin": "2026-06-04T13:54:54.664Z",
+      "lastLogin": "2026-06-04T14:24:48.676Z",
       "outreach": 57,
       "groups": [
         {
@@ -1516,7 +1516,7 @@ const DATA = {
       "reactions": 34,
       "challengesCompleted": 4,
       "loginCount": 292,
-      "lastLogin": "2026-05-29T13:54:54.664Z",
+      "lastLogin": "2026-05-29T14:24:48.676Z",
       "outreach": 88,
       "groups": [
         {
@@ -1578,7 +1578,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 5,
       "loginCount": 221,
-      "lastLogin": "2026-06-02T13:54:54.664Z",
+      "lastLogin": "2026-06-02T14:24:48.676Z",
       "outreach": 91,
       "groups": [
         {
@@ -1640,7 +1640,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 4,
       "loginCount": 237,
-      "lastLogin": "2026-05-31T13:54:54.664Z",
+      "lastLogin": "2026-05-31T14:24:48.676Z",
       "outreach": 57,
       "groups": [
         {
@@ -1702,7 +1702,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 4,
       "loginCount": 145,
-      "lastLogin": "2026-05-29T13:54:54.664Z",
+      "lastLogin": "2026-05-29T14:24:48.676Z",
       "outreach": 38,
       "groups": [
         {
@@ -1764,7 +1764,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 6,
       "loginCount": 217,
-      "lastLogin": "2026-06-09T13:54:54.664Z",
+      "lastLogin": "2026-06-09T14:24:48.676Z",
       "outreach": 71,
       "groups": [
         {
@@ -1826,7 +1826,7 @@ const DATA = {
       "reactions": 12,
       "challengesCompleted": 4,
       "loginCount": 237,
-      "lastLogin": "2026-05-31T13:54:54.664Z",
+      "lastLogin": "2026-05-31T14:24:48.676Z",
       "outreach": 66,
       "groups": [
         {
@@ -1888,7 +1888,7 @@ const DATA = {
       "reactions": 12,
       "challengesCompleted": 11,
       "loginCount": 326,
-      "lastLogin": "2026-05-29T13:54:54.664Z",
+      "lastLogin": "2026-05-29T14:24:48.676Z",
       "outreach": 78,
       "groups": [
         {
@@ -1950,7 +1950,7 @@ const DATA = {
       "reactions": 3,
       "challengesCompleted": 4,
       "loginCount": 155,
-      "lastLogin": "2026-05-28T13:54:54.664Z",
+      "lastLogin": "2026-05-28T14:24:48.676Z",
       "outreach": 19,
       "groups": [
         {
@@ -2012,7 +2012,7 @@ const DATA = {
       "reactions": 47,
       "challengesCompleted": 14,
       "loginCount": 404,
-      "lastLogin": "2026-06-04T13:54:54.664Z",
+      "lastLogin": "2026-06-04T14:24:48.676Z",
       "outreach": 60,
       "groups": [
         {
@@ -2074,7 +2074,7 @@ const DATA = {
       "reactions": 3,
       "challengesCompleted": 9,
       "loginCount": 278,
-      "lastLogin": "2026-06-05T13:54:54.664Z",
+      "lastLogin": "2026-06-05T14:24:48.676Z",
       "outreach": 54,
       "groups": [
         {
@@ -2142,7 +2142,7 @@ const DATA = {
       "reactions": 9,
       "challengesCompleted": 10,
       "loginCount": 210,
-      "lastLogin": "2026-06-02T13:54:54.664Z",
+      "lastLogin": "2026-06-02T14:24:48.676Z",
       "outreach": 61,
       "groups": [
         {
@@ -2204,7 +2204,7 @@ const DATA = {
       "reactions": 6,
       "challengesCompleted": 12,
       "loginCount": 291,
-      "lastLogin": "2026-06-01T13:54:54.664Z",
+      "lastLogin": "2026-06-01T14:24:48.676Z",
       "outreach": 94,
       "groups": [
         {
@@ -2260,7 +2260,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 7,
       "loginCount": 169,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 38,
       "groups": [
         {
@@ -2316,7 +2316,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 4,
       "loginCount": 245,
-      "lastLogin": "2026-06-03T13:54:54.664Z",
+      "lastLogin": "2026-06-03T14:24:48.676Z",
       "outreach": 74,
       "groups": [
         {
@@ -2378,7 +2378,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 3,
       "loginCount": 117,
-      "lastLogin": "2026-06-03T13:54:54.664Z",
+      "lastLogin": "2026-06-03T14:24:48.676Z",
       "outreach": 22,
       "groups": [
         {
@@ -2440,7 +2440,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 10,
       "loginCount": 280,
-      "lastLogin": "2026-05-29T13:54:54.664Z",
+      "lastLogin": "2026-05-29T14:24:48.676Z",
       "outreach": 71,
       "groups": [
         {
@@ -2502,7 +2502,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 5,
       "loginCount": 223,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 46,
       "groups": [
         {
@@ -2564,7 +2564,7 @@ const DATA = {
       "reactions": 26,
       "challengesCompleted": 13,
       "loginCount": 248,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 49,
       "groups": [
         {
@@ -2626,7 +2626,7 @@ const DATA = {
       "reactions": 48,
       "challengesCompleted": 18,
       "loginCount": 384,
-      "lastLogin": "2026-06-04T13:54:54.664Z",
+      "lastLogin": "2026-06-04T14:24:48.676Z",
       "outreach": 59,
       "groups": [
         {
@@ -2694,7 +2694,7 @@ const DATA = {
       "reactions": 63,
       "challengesCompleted": 19,
       "loginCount": 383,
-      "lastLogin": "2026-06-09T13:54:54.664Z",
+      "lastLogin": "2026-06-09T14:24:48.676Z",
       "outreach": 59,
       "groups": [
         {
@@ -2762,7 +2762,7 @@ const DATA = {
       "reactions": 12,
       "challengesCompleted": 5,
       "loginCount": 205,
-      "lastLogin": "2026-06-04T13:54:54.664Z",
+      "lastLogin": "2026-06-04T14:24:48.676Z",
       "outreach": 50,
       "groups": [
         {
@@ -2824,7 +2824,7 @@ const DATA = {
       "reactions": 22,
       "challengesCompleted": 25,
       "loginCount": 378,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 73,
       "groups": [
         {
@@ -2886,7 +2886,7 @@ const DATA = {
       "reactions": 44,
       "challengesCompleted": 12,
       "loginCount": 386,
-      "lastLogin": "2026-06-02T13:54:54.664Z",
+      "lastLogin": "2026-06-02T14:24:48.676Z",
       "outreach": 59,
       "groups": [
         {
@@ -2948,7 +2948,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 6,
       "loginCount": 173,
-      "lastLogin": "2026-06-04T13:54:54.664Z",
+      "lastLogin": "2026-06-04T14:24:48.676Z",
       "outreach": 67,
       "groups": [
         {
@@ -3016,7 +3016,7 @@ const DATA = {
       "reactions": 20,
       "challengesCompleted": 14,
       "loginCount": 321,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 64,
       "groups": [
         {
@@ -3078,7 +3078,7 @@ const DATA = {
       "reactions": 5,
       "challengesCompleted": 8,
       "loginCount": 243,
-      "lastLogin": "2026-06-08T13:54:54.664Z",
+      "lastLogin": "2026-06-08T14:24:48.676Z",
       "outreach": 48,
       "groups": [
         {
@@ -3146,7 +3146,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 8,
       "loginCount": 195,
-      "lastLogin": "2026-06-06T13:54:54.664Z",
+      "lastLogin": "2026-06-06T14:24:48.676Z",
       "outreach": 37,
       "groups": [
         {
@@ -3214,7 +3214,7 @@ const DATA = {
       "reactions": 14,
       "challengesCompleted": 6,
       "loginCount": 216,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 29,
       "groups": [
         {
@@ -3270,7 +3270,7 @@ const DATA = {
       "reactions": 15,
       "challengesCompleted": 7,
       "loginCount": 174,
-      "lastLogin": "2026-06-03T13:54:54.664Z",
+      "lastLogin": "2026-06-03T14:24:48.676Z",
       "outreach": 46,
       "groups": [
         {
@@ -3332,7 +3332,7 @@ const DATA = {
       "reactions": 4,
       "challengesCompleted": 10,
       "loginCount": 230,
-      "lastLogin": "2026-06-08T13:54:54.664Z",
+      "lastLogin": "2026-06-08T14:24:48.676Z",
       "outreach": 68,
       "groups": [
         {
@@ -3400,7 +3400,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 2,
       "loginCount": 172,
-      "lastLogin": "2026-06-07T13:54:54.664Z",
+      "lastLogin": "2026-06-07T14:24:48.676Z",
       "outreach": 50,
       "groups": [
         {
@@ -3462,7 +3462,7 @@ const DATA = {
       "reactions": 37,
       "challengesCompleted": 6,
       "loginCount": 212,
-      "lastLogin": "2026-05-28T13:54:54.664Z",
+      "lastLogin": "2026-05-28T14:24:48.676Z",
       "outreach": 36,
       "groups": [
         {
@@ -3524,7 +3524,7 @@ const DATA = {
       "reactions": 20,
       "challengesCompleted": 52,
       "loginCount": 407,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 44,
       "groups": [
         {
@@ -3592,7 +3592,7 @@ const DATA = {
       "reactions": 13,
       "challengesCompleted": 23,
       "loginCount": 342,
-      "lastLogin": "2026-06-04T13:54:54.664Z",
+      "lastLogin": "2026-06-04T14:24:48.676Z",
       "outreach": 76,
       "groups": [
         {
@@ -3654,7 +3654,7 @@ const DATA = {
       "reactions": 24,
       "challengesCompleted": 9,
       "loginCount": 283,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 74,
       "groups": [
         {
@@ -3722,7 +3722,7 @@ const DATA = {
       "reactions": 9,
       "challengesCompleted": 4,
       "loginCount": 161,
-      "lastLogin": "2026-06-09T13:54:54.664Z",
+      "lastLogin": "2026-06-09T14:24:48.676Z",
       "outreach": 17,
       "groups": [
         {
@@ -3784,7 +3784,7 @@ const DATA = {
       "reactions": 1,
       "challengesCompleted": 5,
       "loginCount": 214,
-      "lastLogin": "2026-05-28T13:54:54.664Z",
+      "lastLogin": "2026-05-28T14:24:48.676Z",
       "outreach": 63,
       "groups": [
         {
@@ -3846,7 +3846,7 @@ const DATA = {
       "reactions": 23,
       "challengesCompleted": 9,
       "loginCount": 268,
-      "lastLogin": "2026-06-08T13:54:54.664Z",
+      "lastLogin": "2026-06-08T14:24:48.676Z",
       "outreach": 46,
       "groups": [
         {
@@ -3908,7 +3908,7 @@ const DATA = {
       "reactions": 22,
       "challengesCompleted": 10,
       "loginCount": 225,
-      "lastLogin": "2026-06-09T13:54:54.664Z",
+      "lastLogin": "2026-06-09T14:24:48.676Z",
       "outreach": 47,
       "groups": [
         {
@@ -3964,7 +3964,7 @@ const DATA = {
       "reactions": 66,
       "challengesCompleted": 15,
       "loginCount": 315,
-      "lastLogin": "2026-06-06T13:54:54.664Z",
+      "lastLogin": "2026-06-06T14:24:48.676Z",
       "outreach": 49,
       "groups": [
         {
@@ -4026,7 +4026,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 6,
       "loginCount": 211,
-      "lastLogin": "2026-06-02T13:54:54.664Z",
+      "lastLogin": "2026-06-02T14:24:48.676Z",
       "outreach": 57,
       "groups": [
         {
@@ -4088,7 +4088,7 @@ const DATA = {
       "reactions": 8,
       "challengesCompleted": 5,
       "loginCount": 205,
-      "lastLogin": "2026-05-29T13:54:54.664Z",
+      "lastLogin": "2026-05-29T14:24:48.676Z",
       "outreach": 50,
       "groups": [
         {
@@ -4150,7 +4150,7 @@ const DATA = {
       "reactions": 37,
       "challengesCompleted": 12,
       "loginCount": 285,
-      "lastLogin": "2026-06-02T13:54:54.664Z",
+      "lastLogin": "2026-06-02T14:24:48.676Z",
       "outreach": 63,
       "groups": [
         {
@@ -4212,7 +4212,7 @@ const DATA = {
       "reactions": 11,
       "challengesCompleted": 4,
       "loginCount": 147,
-      "lastLogin": "2026-06-07T13:54:54.664Z",
+      "lastLogin": "2026-06-07T14:24:48.676Z",
       "outreach": 27,
       "groups": [
         {
@@ -4280,7 +4280,7 @@ const DATA = {
       "reactions": 15,
       "challengesCompleted": 9,
       "loginCount": 273,
-      "lastLogin": "2026-06-02T13:54:54.664Z",
+      "lastLogin": "2026-06-02T14:24:48.676Z",
       "outreach": 46,
       "groups": [
         {
@@ -4336,7 +4336,7 @@ const DATA = {
       "reactions": 120,
       "challengesCompleted": 28,
       "loginCount": 386,
-      "lastLogin": "2026-06-05T13:54:54.664Z",
+      "lastLogin": "2026-06-05T14:24:48.676Z",
       "outreach": 38,
       "groups": [
         {
@@ -4410,7 +4410,7 @@ const DATA = {
       "reactions": 41,
       "challengesCompleted": 33,
       "loginCount": 385,
-      "lastLogin": "2026-05-28T13:54:54.664Z",
+      "lastLogin": "2026-05-28T14:24:48.676Z",
       "outreach": 38,
       "groups": [
         {
@@ -4478,7 +4478,7 @@ const DATA = {
       "reactions": 7,
       "challengesCompleted": 6,
       "loginCount": 176,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 20,
       "groups": [
         {
@@ -4540,7 +4540,7 @@ const DATA = {
       "reactions": 4,
       "challengesCompleted": 10,
       "loginCount": 212,
-      "lastLogin": "2026-06-09T13:54:54.664Z",
+      "lastLogin": "2026-06-09T14:24:48.676Z",
       "outreach": 46,
       "groups": [
         {
@@ -4596,7 +4596,7 @@ const DATA = {
       "reactions": 1,
       "challengesCompleted": 3,
       "loginCount": 140,
-      "lastLogin": "2026-06-02T13:54:54.664Z",
+      "lastLogin": "2026-06-02T14:24:48.676Z",
       "outreach": 40,
       "groups": [
         {
@@ -4658,7 +4658,7 @@ const DATA = {
       "reactions": 24,
       "challengesCompleted": 8,
       "loginCount": 199,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 26,
       "groups": [
         {
@@ -4714,7 +4714,7 @@ const DATA = {
       "reactions": 23,
       "challengesCompleted": 12,
       "loginCount": 260,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 51,
       "groups": [
         {
@@ -4776,7 +4776,7 @@ const DATA = {
       "reactions": 10,
       "challengesCompleted": 7,
       "loginCount": 210,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 57,
       "groups": [
         {
@@ -4838,7 +4838,7 @@ const DATA = {
       "reactions": 21,
       "challengesCompleted": 9,
       "loginCount": 196,
-      "lastLogin": "2026-05-30T13:54:54.664Z",
+      "lastLogin": "2026-05-30T14:24:48.676Z",
       "outreach": 29,
       "groups": [
         {
@@ -4900,7 +4900,7 @@ const DATA = {
       "reactions": 18,
       "challengesCompleted": 9,
       "loginCount": 205,
-      "lastLogin": "2026-06-07T13:54:54.664Z",
+      "lastLogin": "2026-06-07T14:24:48.676Z",
       "outreach": 45,
       "groups": [
         {
@@ -4956,7 +4956,7 @@ const DATA = {
       "reactions": 5,
       "challengesCompleted": 6,
       "loginCount": 209,
-      "lastLogin": "2026-05-31T13:54:54.664Z",
+      "lastLogin": "2026-05-31T14:24:48.676Z",
       "outreach": 42,
       "groups": [
         {
@@ -5018,7 +5018,7 @@ const DATA = {
       "reactions": 7,
       "challengesCompleted": 15,
       "loginCount": 267,
-      "lastLogin": "2026-06-01T13:54:54.664Z",
+      "lastLogin": "2026-06-01T14:24:48.676Z",
       "outreach": 63,
       "groups": [
         {
@@ -5092,7 +5092,7 @@ const DATA = {
       "reactions": 46,
       "challengesCompleted": 38,
       "loginCount": 385,
-      "lastLogin": "2026-05-27T13:54:54.664Z",
+      "lastLogin": "2026-05-27T14:24:48.676Z",
       "outreach": 35,
       "groups": [
         {
@@ -5154,7 +5154,7 @@ const DATA = {
       "reactions": 2,
       "challengesCompleted": 3,
       "loginCount": 103,
-      "lastLogin": "2026-06-04T13:54:54.664Z",
+      "lastLogin": "2026-06-04T14:24:48.676Z",
       "outreach": 20,
       "groups": [
         {
@@ -5216,7 +5216,7 @@ const DATA = {
       "reactions": 1,
       "challengesCompleted": 3,
       "loginCount": 113,
-      "lastLogin": "2026-06-08T13:54:54.664Z",
+      "lastLogin": "2026-06-08T14:24:48.676Z",
       "outreach": 33,
       "groups": [
         {
@@ -5278,7 +5278,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 9,
       "loginCount": 160,
-      "lastLogin": "2026-05-31T13:54:54.664Z",
+      "lastLogin": "2026-05-31T14:24:48.676Z",
       "outreach": 28,
       "groups": [
         {
@@ -5340,7 +5340,7 @@ const DATA = {
       "reactions": 16,
       "challengesCompleted": 8,
       "loginCount": 225,
-      "lastLogin": "2026-06-03T13:54:54.664Z",
+      "lastLogin": "2026-06-03T14:24:48.676Z",
       "outreach": 54,
       "groups": [
         {
@@ -5414,7 +5414,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 4,
       "loginCount": 215,
-      "lastLogin": "2026-06-03T13:54:54.664Z",
+      "lastLogin": "2026-06-03T14:24:48.676Z",
       "outreach": 58,
       "groups": [
         {
@@ -5482,7 +5482,7 @@ const DATA = {
       "reactions": 17,
       "challengesCompleted": 14,
       "loginCount": 236,
-      "lastLogin": "2026-06-07T13:54:54.664Z",
+      "lastLogin": "2026-06-07T14:24:48.676Z",
       "outreach": 33,
       "groups": [
         {
@@ -5538,7 +5538,7 @@ const DATA = {
       "reactions": 0,
       "challengesCompleted": 4,
       "loginCount": 120,
-      "lastLogin": "2026-06-09T13:54:54.664Z",
+      "lastLogin": "2026-06-09T14:24:48.676Z",
       "outreach": 37,
       "groups": [
         {
@@ -5600,7 +5600,7 @@ const DATA = {
       "reactions": 27,
       "challengesCompleted": 15,
       "loginCount": 357,
-      "lastLogin": "2026-05-31T13:54:54.664Z",
+      "lastLogin": "2026-05-31T14:24:48.676Z",
       "outreach": 48,
       "groups": [
         {
@@ -5662,7 +5662,7 @@ const DATA = {
       "reactions": 7,
       "challengesCompleted": 18,
       "loginCount": 271,
-      "lastLogin": "2026-06-01T13:54:54.664Z",
+      "lastLogin": "2026-06-01T14:24:48.676Z",
       "outreach": 46,
       "groups": [
         {
@@ -6211,20 +6211,20 @@ const DATA = {
       "lastAt": "2026-05-08T19:27:43.000Z"
     },
     {
-      "source": 236379,
-      "target": 229112,
-      "weight": 2.5,
-      "crossTeam": false,
-      "firstAt": "2025-12-17T01:49:20.000Z",
-      "lastAt": "2026-03-25T08:00:15.000Z"
-    },
-    {
       "source": 231919,
       "target": 244263,
       "weight": 2.5,
       "crossTeam": true,
       "firstAt": "2026-01-09T12:30:56.000Z",
       "lastAt": "2026-05-25T00:05:13.000Z"
+    },
+    {
+      "source": 236379,
+      "target": 229112,
+      "weight": 2.5,
+      "crossTeam": false,
+      "firstAt": "2025-12-17T01:49:20.000Z",
+      "lastAt": "2026-03-25T08:00:15.000Z"
     },
     {
       "source": 241163,
@@ -6619,20 +6619,20 @@ const DATA = {
       "lastAt": "2026-03-09T22:25:17.000Z"
     },
     {
-      "source": 404898,
-      "target": 229127,
+      "source": 250587,
+      "target": 302634,
       "weight": 2,
-      "crossTeam": true,
-      "firstAt": "2026-02-18T15:26:48.000Z",
-      "lastAt": "2026-04-23T21:21:41.000Z"
+      "crossTeam": false,
+      "firstAt": "2026-01-06T11:32:51.000Z",
+      "lastAt": "2026-04-15T07:48:08.000Z"
     },
     {
-      "source": 475381,
-      "target": 316363,
+      "source": 251479,
+      "target": 227862,
       "weight": 2,
       "crossTeam": true,
-      "firstAt": "2026-04-21T12:32:20.000Z",
-      "lastAt": "2026-06-01T12:27:36.000Z"
+      "firstAt": "2026-05-03T08:57:13.000Z",
+      "lastAt": "2026-05-04T12:09:50.000Z"
     },
     {
       "source": 345383,
@@ -6649,22 +6649,6 @@ const DATA = {
       "crossTeam": true,
       "firstAt": "2026-05-06T12:45:52.000Z",
       "lastAt": "2026-05-06T12:58:32.000Z"
-    },
-    {
-      "source": 250587,
-      "target": 302634,
-      "weight": 2,
-      "crossTeam": false,
-      "firstAt": "2026-01-06T11:32:51.000Z",
-      "lastAt": "2026-04-15T07:48:08.000Z"
-    },
-    {
-      "source": 251479,
-      "target": 227862,
-      "weight": 2,
-      "crossTeam": true,
-      "firstAt": "2026-05-03T08:57:13.000Z",
-      "lastAt": "2026-05-04T12:09:50.000Z"
     },
     {
       "source": 316363,
@@ -6705,6 +6689,22 @@ const DATA = {
       "crossTeam": true,
       "firstAt": "2026-01-30T02:08:13.000Z",
       "lastAt": "2026-05-03T18:35:58.000Z"
+    },
+    {
+      "source": 404898,
+      "target": 229127,
+      "weight": 2,
+      "crossTeam": true,
+      "firstAt": "2026-02-18T15:26:48.000Z",
+      "lastAt": "2026-04-23T21:21:41.000Z"
+    },
+    {
+      "source": 475381,
+      "target": 316363,
+      "weight": 2,
+      "crossTeam": true,
+      "firstAt": "2026-04-21T12:32:20.000Z",
+      "lastAt": "2026-06-01T12:27:36.000Z"
     },
     {
       "source": 404898,
@@ -6883,14 +6883,6 @@ const DATA = {
       "lastAt": "2026-05-26T18:33:15.000Z"
     },
     {
-      "source": 217288,
-      "target": 221139,
-      "weight": 1.33333,
-      "crossTeam": true,
-      "firstAt": "2026-01-07T20:13:14.000Z",
-      "lastAt": "2026-04-08T18:24:02.000Z"
-    },
-    {
       "source": 220075,
       "target": 229066,
       "weight": 1.33333,
@@ -6945,6 +6937,14 @@ const DATA = {
       "crossTeam": false,
       "firstAt": "2026-02-07T20:11:45.000Z",
       "lastAt": "2026-06-01T08:06:07.000Z"
+    },
+    {
+      "source": 217288,
+      "target": 221139,
+      "weight": 1.33333,
+      "crossTeam": true,
+      "firstAt": "2026-01-07T20:13:14.000Z",
+      "lastAt": "2026-04-08T18:24:02.000Z"
     },
     {
       "source": 229127,
@@ -7539,86 +7539,6 @@ const DATA = {
       "lastAt": "2026-05-06T17:47:43.000Z"
     },
     {
-      "source": 250587,
-      "target": 294955,
-      "weight": 1,
-      "crossTeam": false,
-      "firstAt": "2026-03-19T01:53:22.000Z",
-      "lastAt": "2026-03-19T01:53:22.000Z"
-    },
-    {
-      "source": 251479,
-      "target": 241163,
-      "weight": 1,
-      "crossTeam": true,
-      "firstAt": "2026-04-16T10:59:48.000Z",
-      "lastAt": "2026-04-16T10:59:48.000Z"
-    },
-    {
-      "source": 251479,
-      "target": 310266,
-      "weight": 1,
-      "crossTeam": true,
-      "firstAt": "2025-12-12T02:47:22.000Z",
-      "lastAt": "2025-12-12T02:47:22.000Z"
-    },
-    {
-      "source": 252443,
-      "target": 238454,
-      "weight": 1,
-      "crossTeam": true,
-      "firstAt": "2026-02-23T04:57:11.000Z",
-      "lastAt": "2026-02-23T04:57:11.000Z"
-    },
-    {
-      "source": 252657,
-      "target": 221443,
-      "weight": 1,
-      "crossTeam": false,
-      "firstAt": "2026-01-16T19:33:48.000Z",
-      "lastAt": "2026-01-16T19:33:48.000Z"
-    },
-    {
-      "source": 294201,
-      "target": 243515,
-      "weight": 1,
-      "crossTeam": true,
-      "firstAt": "2026-05-04T13:28:58.000Z",
-      "lastAt": "2026-05-04T13:28:58.000Z"
-    },
-    {
-      "source": 338526,
-      "target": 232317,
-      "weight": 1,
-      "crossTeam": true,
-      "firstAt": "2026-04-07T17:18:24.000Z",
-      "lastAt": "2026-04-07T17:18:24.000Z"
-    },
-    {
-      "source": 345383,
-      "target": 238725,
-      "weight": 1,
-      "crossTeam": true,
-      "firstAt": "2026-01-16T20:15:17.000Z",
-      "lastAt": "2026-01-16T20:15:17.000Z"
-    },
-    {
-      "source": 345383,
-      "target": 252657,
-      "weight": 1,
-      "crossTeam": true,
-      "firstAt": "2026-05-06T13:51:30.000Z",
-      "lastAt": "2026-05-06T13:51:30.000Z"
-    },
-    {
-      "source": 345383,
-      "target": 302634,
-      "weight": 1,
-      "crossTeam": true,
-      "firstAt": "2026-01-16T20:32:22.000Z",
-      "lastAt": "2026-01-16T20:33:18.000Z"
-    },
-    {
       "source": 302634,
       "target": 221006,
       "weight": 1,
@@ -7715,12 +7635,92 @@ const DATA = {
       "lastAt": "2026-02-11T11:01:25.000Z"
     },
     {
+      "source": 338526,
+      "target": 232317,
+      "weight": 1,
+      "crossTeam": true,
+      "firstAt": "2026-04-07T17:18:24.000Z",
+      "lastAt": "2026-04-07T17:18:24.000Z"
+    },
+    {
+      "source": 345383,
+      "target": 238725,
+      "weight": 1,
+      "crossTeam": true,
+      "firstAt": "2026-01-16T20:15:17.000Z",
+      "lastAt": "2026-01-16T20:15:17.000Z"
+    },
+    {
+      "source": 345383,
+      "target": 252657,
+      "weight": 1,
+      "crossTeam": true,
+      "firstAt": "2026-05-06T13:51:30.000Z",
+      "lastAt": "2026-05-06T13:51:30.000Z"
+    },
+    {
+      "source": 345383,
+      "target": 302634,
+      "weight": 1,
+      "crossTeam": true,
+      "firstAt": "2026-01-16T20:32:22.000Z",
+      "lastAt": "2026-01-16T20:33:18.000Z"
+    },
+    {
       "source": 316363,
       "target": 310905,
       "weight": 1,
       "crossTeam": true,
       "firstAt": "2025-12-18T14:44:35.000Z",
       "lastAt": "2025-12-18T14:44:35.000Z"
+    },
+    {
+      "source": 250587,
+      "target": 294955,
+      "weight": 1,
+      "crossTeam": false,
+      "firstAt": "2026-03-19T01:53:22.000Z",
+      "lastAt": "2026-03-19T01:53:22.000Z"
+    },
+    {
+      "source": 251479,
+      "target": 241163,
+      "weight": 1,
+      "crossTeam": true,
+      "firstAt": "2026-04-16T10:59:48.000Z",
+      "lastAt": "2026-04-16T10:59:48.000Z"
+    },
+    {
+      "source": 251479,
+      "target": 310266,
+      "weight": 1,
+      "crossTeam": true,
+      "firstAt": "2025-12-12T02:47:22.000Z",
+      "lastAt": "2025-12-12T02:47:22.000Z"
+    },
+    {
+      "source": 252443,
+      "target": 238454,
+      "weight": 1,
+      "crossTeam": true,
+      "firstAt": "2026-02-23T04:57:11.000Z",
+      "lastAt": "2026-02-23T04:57:11.000Z"
+    },
+    {
+      "source": 252657,
+      "target": 221443,
+      "weight": 1,
+      "crossTeam": false,
+      "firstAt": "2026-01-16T19:33:48.000Z",
+      "lastAt": "2026-01-16T19:33:48.000Z"
+    },
+    {
+      "source": 294201,
+      "target": 243515,
+      "weight": 1,
+      "crossTeam": true,
+      "firstAt": "2026-05-04T13:28:58.000Z",
+      "lastAt": "2026-05-04T13:28:58.000Z"
     },
     {
       "source": 244263,
@@ -8155,20 +8155,20 @@ const DATA = {
       "lastAt": "2026-03-13T12:39:53.000Z"
     },
     {
-      "source": 305699,
-      "target": 223535,
-      "weight": 0.83333,
-      "crossTeam": true,
-      "firstAt": "2026-04-29T16:34:24.000Z",
-      "lastAt": "2026-05-26T16:51:15.000Z"
-    },
-    {
       "source": 252657,
       "target": 301071,
       "weight": 0.83333,
       "crossTeam": true,
       "firstAt": "2026-04-29T12:01:59.000Z",
       "lastAt": "2026-05-26T18:34:32.000Z"
+    },
+    {
+      "source": 305699,
+      "target": 223535,
+      "weight": 0.83333,
+      "crossTeam": true,
+      "firstAt": "2026-04-29T16:34:24.000Z",
+      "lastAt": "2026-05-26T16:51:15.000Z"
     },
     {
       "source": 221006,
@@ -8435,6 +8435,14 @@ const DATA = {
       "lastAt": "2026-02-01T08:48:09.000Z"
     },
     {
+      "source": 404898,
+      "target": 252657,
+      "weight": 0.5,
+      "crossTeam": true,
+      "firstAt": "2026-04-22T21:38:53.000Z",
+      "lastAt": "2026-04-22T21:38:53.000Z"
+    },
+    {
       "source": 252657,
       "target": 221006,
       "weight": 0.5,
@@ -8449,14 +8457,6 @@ const DATA = {
       "crossTeam": true,
       "firstAt": "2026-05-07T10:13:24.000Z",
       "lastAt": "2026-05-07T10:13:24.000Z"
-    },
-    {
-      "source": 404898,
-      "target": 252657,
-      "weight": 0.5,
-      "crossTeam": true,
-      "firstAt": "2026-04-22T21:38:53.000Z",
-      "lastAt": "2026-04-22T21:38:53.000Z"
     },
     {
       "source": 245061,
@@ -8491,22 +8491,6 @@ const DATA = {
       "lastAt": "2026-04-27T21:00:00.000Z"
     },
     {
-      "source": 217682,
-      "target": 216926,
-      "weight": 0.33333,
-      "crossTeam": true,
-      "firstAt": "2026-01-28T01:52:39.000Z",
-      "lastAt": "2026-01-28T01:52:39.000Z"
-    },
-    {
-      "source": 221443,
-      "target": 221006,
-      "weight": 0.33333,
-      "crossTeam": true,
-      "firstAt": "2026-06-01T08:06:07.000Z",
-      "lastAt": "2026-06-01T08:06:07.000Z"
-    },
-    {
       "source": 220040,
       "target": 299534,
       "weight": 0.33333,
@@ -8523,12 +8507,36 @@ const DATA = {
       "lastAt": "2026-01-29T07:00:43.000Z"
     },
     {
+      "source": 217682,
+      "target": 216926,
+      "weight": 0.33333,
+      "crossTeam": true,
+      "firstAt": "2026-01-28T01:52:39.000Z",
+      "lastAt": "2026-01-28T01:52:39.000Z"
+    },
+    {
+      "source": 221443,
+      "target": 221006,
+      "weight": 0.33333,
+      "crossTeam": true,
+      "firstAt": "2026-06-01T08:06:07.000Z",
+      "lastAt": "2026-06-01T08:06:07.000Z"
+    },
+    {
       "source": 252657,
       "target": 235191,
       "weight": 0.33333,
       "crossTeam": false,
       "firstAt": "2026-05-26T18:44:34.000Z",
       "lastAt": "2026-05-26T18:44:34.000Z"
+    },
+    {
+      "source": 313895,
+      "target": 298774,
+      "weight": 0.33333,
+      "crossTeam": true,
+      "firstAt": "2026-01-21T21:53:12.000Z",
+      "lastAt": "2026-01-21T21:53:12.000Z"
     },
     {
       "source": 248226,
@@ -8545,14 +8553,6 @@ const DATA = {
       "crossTeam": true,
       "firstAt": "2026-02-23T12:04:12.000Z",
       "lastAt": "2026-02-23T12:04:12.000Z"
-    },
-    {
-      "source": 313895,
-      "target": 298774,
-      "weight": 0.33333,
-      "crossTeam": true,
-      "firstAt": "2026-01-21T21:53:12.000Z",
-      "lastAt": "2026-01-21T21:53:12.000Z"
     },
     {
       "source": 235774,
@@ -8619,6 +8619,14 @@ const DATA = {
       "lastAt": "2026-05-01T16:54:54.000Z"
     },
     {
+      "source": 238843,
+      "target": 235191,
+      "weight": 0.33333,
+      "crossTeam": false,
+      "firstAt": "2026-02-21T15:21:54.000Z",
+      "lastAt": "2026-02-21T15:21:54.000Z"
+    },
+    {
       "source": 229127,
       "target": 218014,
       "weight": 0.33333,
@@ -8641,14 +8649,6 @@ const DATA = {
       "crossTeam": true,
       "firstAt": "2026-02-10T18:35:26.000Z",
       "lastAt": "2026-02-10T18:35:26.000Z"
-    },
-    {
-      "source": 238843,
-      "target": 235191,
-      "weight": 0.33333,
-      "crossTeam": false,
-      "firstAt": "2026-02-21T15:21:54.000Z",
-      "lastAt": "2026-02-21T15:21:54.000Z"
     },
     {
       "source": 235351,
@@ -37694,7 +37694,7 @@ const DATA = {
         "id": 220625,
         "name": "Bulah",
         "team": "Creola Hodkiewicz's Team",
-        "influenceScore": 171.3,
+        "influenceScore": 171,
         "pageRank": 1,
         "sent": 120.08335000000002,
         "received": 2.5873
@@ -37920,7 +37920,7 @@ ctrl.innerHTML = `
   </select>
   <span style="margin-left:8px;"></span>
   <button onclick="reLayout()">Re-Layout</button>
-  <span style="margin-left:8px;color:#64748b;font-size:11px;" id="scope-info">Showing all ${DATA.nodes.length} people</span>
+  <span style="margin-left:8px;color:#94a3b8;font-size:11px;" id="scope-info">Showing all ${DATA.nodes.length} people</span>
 `;
 
 function onGroupTypeChange(gtId) {
@@ -38033,17 +38033,17 @@ const leg = document.getElementById('legend');
 const teamLegendItems = DATA.teams.slice(0, 12).map(t =>
   `<div class="leg"><span class="ldot" style="background:${teamColors[t]};"></span> ${t}</div>`
 ).join('');
-const moreTeams = DATA.teams.length > 12 ? `<div class="leg" style="color:#64748b;">+ ${DATA.teams.length - 12} more</div>` : '';
+const moreTeams = DATA.teams.length > 12 ? `<div class="leg" style="color:#94a3b8;">+ ${DATA.teams.length - 12} more</div>` : '';
 leg.innerHTML = `
-  <div style="font-weight:600;margin-bottom:6px;color:#f1f5f9;">Teams</div>
+  <div style="font-weight:600;margin-bottom:6px;color:#0f172a;">Teams</div>
   ${teamLegendItems}
   ${moreTeams}
-  <hr style="border:none;border-top:1px solid #334155;margin:6px 0;">
-  <div style="font-weight:600;margin-bottom:4px;color:#f1f5f9;">Edges</div>
-  <div class="leg"><span class="ledge" style="border-top:2px solid #475569;"></span> Same team</div>
+  <hr style="border:none;border-top:1px solid #e2e8f0;margin:6px 0;">
+  <div style="font-weight:600;margin-bottom:4px;color:#0f172a;">Edges</div>
+  <div class="leg"><span class="ledge" style="border-top:2px solid #cbd5e1;"></span> Same team</div>
   <div class="leg"><span class="ledge" style="border-top:2px dashed #d97706;"></span> Cross-team</div>
-  <div class="leg" style="color:#64748b;margin-top:4px;">Node size = influence score</div>
-  <div class="leg" style="color:#64748b;">Edge width = recognition count</div>
+  <div class="leg" style="color:#94a3b8;margin-top:4px;">Node size = influence score</div>
+  <div class="leg" style="color:#94a3b8;">Edge width = recognition count</div>
 `;
 
 // ── Stats panel ──
@@ -38053,7 +38053,7 @@ function updateStats(nodes, edges) {
   const visEdges = edges.filter(e => e.visible()).length;
   const cross = edges.filter(e => e.visible() && e.data('crossTeam')).length;
   panel.innerHTML = `
-    <div style="font-weight:600;margin-bottom:6px;color:#f1f5f9;">Network Stats</div>
+    <div style="font-weight:600;margin-bottom:6px;color:#0f172a;">Network Stats</div>
     <div class="stat-row"><span class="stat-label">Visible People</span><span class="stat-value">${visible}</span></div>
     <div class="stat-row"><span class="stat-label">Connections</span><span class="stat-value">${visEdges}</span></div>
     <div class="stat-row"><span class="stat-label">Cross-Team</span><span class="stat-value" style="color:#fbbf24;">${cross}</span></div>
@@ -38139,9 +38139,9 @@ const cy = cytoscape({
         'border-opacity': 0.8,
         'font-size': '8px',
         'font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-        'color': '#e2e8f0',
-        'text-outline-color': '#0f172a',
-        'text-outline-width': 1.5,
+        'color': '#1e293b',
+        'text-outline-color': '#fff',
+        'text-outline-width': 2,
         'text-valign': 'bottom',
         'text-margin-y': 6,
         'text-wrap': 'ellipsis',
@@ -38161,8 +38161,8 @@ const cy = cytoscape({
       selector: 'edge',
       style: {
         'width': 'data(edgeWidth)',
-        'line-color': '#334155',
-        'target-arrow-color': '#475569',
+        'line-color': '#cbd5e1',
+        'target-arrow-color': '#94a3b8',
         'target-arrow-shape': 'triangle',
         'arrow-scale': 0.5,
         'curve-style': 'bezier',
@@ -38172,7 +38172,7 @@ const cy = cytoscape({
     {
       selector: 'edge[?crossTeam]',
       style: {
-        'line-color': '#92400e',
+        'line-color': '#f59e0b',
         'target-arrow-color': '#d97706',
         'line-style': 'dashed',
         'opacity': 0.6,
@@ -38239,22 +38239,22 @@ const cy = cytoscape({
     {
       selector: '.ghost',
       style: {
-        'background-color': '#334155',
+        'background-color': '#e2e8f0',
         'border-color': '#ef4444',
         'border-width': 2,
         'border-style': 'dashed',
-        'border-opacity': 0.6,
-        'background-opacity': 0.3,
+        'border-opacity': 0.5,
+        'background-opacity': 0.4,
         'background-image': 'data(avatar)',
         'background-fit': 'cover',
         'background-clip': 'node',
-        'background-image-opacity': 0.25,
+        'background-image-opacity': 0.3,
         'width': 22,
         'height': 22,
         'label': 'data(label)',
         'font-size': '7px',
         'color': '#94a3b8',
-        'text-outline-color': '#0f172a',
+        'text-outline-color': '#fff',
         'text-outline-width': 1,
         'text-valign': 'bottom',
         'text-margin-y': 5,
@@ -38357,56 +38357,56 @@ function showSidebar(node) {
   sb.innerHTML = `
     <span class="close" onclick="closeSidebar()">&times;</span>
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-      <img src="${d.avatar}" style="width:56px;height:56px;border-radius:50%;border:3px solid ${d.teamColor};background:#0f172a;object-fit:cover;object-position:center;display:block;" />
+      <img src="${d.avatar}" style="width:56px;height:56px;border-radius:50%;border:3px solid ${d.teamColor};background:#f1f5f9;object-fit:cover;object-position:center;display:block;" />
       <div>
         <h2 style="margin-bottom:2px;">${d.fullName || d.label}${d.hasCrown ? ' <span style="font-size:16px;">👑</span>' : ''}</h2>
-        <div style="font-size:11px;color:#94a3b8;">${d.jobTitle || 'N/A'}</div>
+        <div style="font-size:11px;color:#64748b;">${d.jobTitle || 'N/A'}</div>
       </div>
     </div>
     <div class="row"><span class="lbl">Team</span><span class="val" style="color:${d.teamColor}">${d.team}</span></div>
     <div class="row"><span class="lbl">People ID</span><span class="val">${d.pid}</span></div>
     <div class="row"><span class="lbl">Access Level</span><span class="val">${d.accessLevel}</span></div>
     <hr>
-    <div style="font-weight:600;color:#f1f5f9;margin-bottom:6px;">Influence Score: ${r(d.influenceScore)} <span style="color:#94a3b8;font-weight:400;font-size:11px;">(top ${100 - percentile}%)</span></div>
+    <div style="font-weight:600;color:#0f172a;margin-bottom:6px;">Influence Score: ${r(d.influenceScore)} <span style="color:#64748b;font-weight:400;font-size:11px;">(top ${100 - percentile}%)</span></div>
     <div class="bar-container"><div class="bar-fill" style="width:${infPct}%;background:linear-gradient(90deg, ${d.teamColor}, #f59e0b);"></div></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px;">
-      <div style="background:#1e293b;border-radius:6px;padding:8px;text-align:center;">
-        <div style="font-size:18px;font-weight:700;color:#f1f5f9;">${r(d.sendInfluence)}</div>
-        <div style="font-size:10px;color:#94a3b8;">Send Influence</div>
-        <div style="font-size:10px;color:#64748b;">${r(d.totalSent)} sent, 1.5x cross-team</div>
+      <div style="background:#f1f5f9;border-radius:6px;padding:8px;text-align:center;">
+        <div style="font-size:18px;font-weight:700;color:#0f172a;">${r(d.sendInfluence)}</div>
+        <div style="font-size:10px;color:#64748b;">Send Influence</div>
+        <div style="font-size:10px;color:#94a3b8;">${r(d.totalSent)} sent, 1.5x cross-team</div>
       </div>
-      <div style="background:#1e293b;border-radius:6px;padding:8px;text-align:center;">
-        <div style="font-size:18px;font-weight:700;color:#f1f5f9;">${r(d.receiveInfluence)}</div>
-        <div style="font-size:10px;color:#94a3b8;">Receive Influence</div>
-        <div style="font-size:10px;color:#64748b;">${r(d.totalReceived)} received, rank-weighted</div>
+      <div style="background:#f1f5f9;border-radius:6px;padding:8px;text-align:center;">
+        <div style="font-size:18px;font-weight:700;color:#0f172a;">${r(d.receiveInfluence)}</div>
+        <div style="font-size:10px;color:#64748b;">Receive Influence</div>
+        <div style="font-size:10px;color:#94a3b8;">${r(d.totalReceived)} received, rank-weighted</div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;">
-      <div style="background:#1e293b;border-radius:6px;padding:8px;text-align:center;">
-        <div style="font-size:18px;font-weight:700;color:#93c5fd;">${r(d.pageRank)}</div>
-        <div style="font-size:10px;color:#94a3b8;">PageRank</div>
-        <div style="font-size:10px;color:#64748b;">Cascade influence</div>
+      <div style="background:#f1f5f9;border-radius:6px;padding:8px;text-align:center;">
+        <div style="font-size:18px;font-weight:700;color:#4f46e5;">${r(d.pageRank)}</div>
+        <div style="font-size:10px;color:#64748b;">PageRank</div>
+        <div style="font-size:10px;color:#94a3b8;">Cascade influence</div>
       </div>
-      <div style="background:#1e293b;border-radius:6px;padding:8px;text-align:center;">
-        <div style="font-size:18px;font-weight:700;color:#fbbf24;">${d.crossTeamEdges}</div>
-        <div style="font-size:10px;color:#94a3b8;">Cross-Team</div>
-        <div style="font-size:10px;color:#64748b;">Bridge connections</div>
+      <div style="background:#f1f5f9;border-radius:6px;padding:8px;text-align:center;">
+        <div style="font-size:18px;font-weight:700;color:#d97706;">${d.crossTeamEdges}</div>
+        <div style="font-size:10px;color:#64748b;">Cross-Team</div>
+        <div style="font-size:10px;color:#94a3b8;">Bridge connections</div>
       </div>
     </div>
     <hr>
-    <div style="font-weight:600;color:#f1f5f9;margin-bottom:6px;">Engagement</div>
+    <div style="font-weight:600;color:#0f172a;margin-bottom:6px;">Engagement</div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
-      <div style="background:#1e293b;border-radius:6px;padding:6px;text-align:center;">
-        <div style="font-size:16px;font-weight:700;color:#f1f5f9;">${d.comments}</div>
-        <div style="font-size:9px;color:#94a3b8;">Comments</div>
+      <div style="background:#f1f5f9;border-radius:6px;padding:6px;text-align:center;">
+        <div style="font-size:16px;font-weight:700;color:#0f172a;">${d.comments}</div>
+        <div style="font-size:9px;color:#64748b;">Comments</div>
       </div>
-      <div style="background:#1e293b;border-radius:6px;padding:6px;text-align:center;">
-        <div style="font-size:16px;font-weight:700;color:#f1f5f9;">${d.reactions}</div>
-        <div style="font-size:9px;color:#94a3b8;">Reactions</div>
+      <div style="background:#f1f5f9;border-radius:6px;padding:6px;text-align:center;">
+        <div style="font-size:16px;font-weight:700;color:#0f172a;">${d.reactions}</div>
+        <div style="font-size:9px;color:#64748b;">Reactions</div>
       </div>
-      <div style="background:#1e293b;border-radius:6px;padding:6px;text-align:center;">
-        <div style="font-size:16px;font-weight:700;color:#f1f5f9;">${d.challengesCompleted}</div>
-        <div style="font-size:9px;color:#94a3b8;">Challenges</div>
+      <div style="background:#f1f5f9;border-radius:6px;padding:6px;text-align:center;">
+        <div style="font-size:16px;font-weight:700;color:#0f172a;">${d.challengesCompleted}</div>
+        <div style="font-size:9px;color:#64748b;">Challenges</div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;">
@@ -38419,22 +38419,22 @@ function showSidebar(node) {
     <div class="conn-list">
       ${sentList.map(c => `
         <div class="conn-item" style="cursor:pointer;" onclick="focusNode('${c.nodeId}')">
-          <span>${c.name} <span style="color:#64748b;font-size:10px;">${c.team}</span></span>
+          <span>${c.name} <span style="color:#94a3b8;font-size:10px;">${c.team}</span></span>
           <span class="conn-badge ${c.cross ? 'cross' : ''}">${r(c.weight)}</span>
         </div>
       `).join('')}
-      ${sentList.length === 0 ? '<div style="color:#64748b;padding:4px 8px;">None in view</div>' : ''}
+      ${sentList.length === 0 ? '<div style="color:#94a3b8;padding:4px 8px;">None in view</div>' : ''}
     </div>
     <hr>
     <h2>Received Recognition (${recvList.length})</h2>
     <div class="conn-list">
       ${recvList.map(c => `
         <div class="conn-item" style="cursor:pointer;" onclick="focusNode('${c.nodeId}')">
-          <span>${c.name} <span style="color:#64748b;font-size:10px;">${c.team}</span></span>
+          <span>${c.name} <span style="color:#94a3b8;font-size:10px;">${c.team}</span></span>
           <span class="conn-badge ${c.cross ? 'cross' : ''}">${r(c.weight)}</span>
         </div>
       `).join('')}
-      ${recvList.length === 0 ? '<div style="color:#64748b;padding:4px 8px;">None in view</div>' : ''}
+      ${recvList.length === 0 ? '<div style="color:#94a3b8;padding:4px 8px;">None in view</div>' : ''}
     </div>
   `;
 
@@ -38453,17 +38453,17 @@ function showGhostSidebar(node) {
   sb.innerHTML = `
     <span class="close" onclick="closeSidebar()">&times;</span>
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-      <img src="${d.avatar || ghostAvatar(d.pid)}" style="width:56px;height:56px;border-radius:50%;border:3px dashed #ef4444;background:#0f172a;object-fit:cover;opacity:0.4;" />
+      <img src="${d.avatar || ghostAvatar(d.pid)}" style="width:56px;height:56px;border-radius:50%;border:3px dashed #ef4444;background:#f1f5f9;object-fit:cover;opacity:0.5;" />
       <div>
-        <h2 style="margin-bottom:2px;color:#94a3b8;">${d.fullName || d.label}</h2>
-        <div style="font-size:11px;color:#64748b;">${d.jobTitle || 'N/A'}</div>
+        <h2 style="margin-bottom:2px;color:#64748b;">${d.fullName || d.label}</h2>
+        <div style="font-size:11px;color:#94a3b8;">${d.jobTitle || 'N/A'}</div>
       </div>
     </div>
     <hr>
-    <div style="background:#1c1917;border:1px solid #7f1d1d;border-radius:8px;padding:16px;margin:12px 0;">
-      <div style="font-weight:600;color:#fca5a5;margin-bottom:8px;">Disengaged</div>
-      <div style="font-size:12px;color:#94a3b8;line-height:1.6;">
-        This person is a member of the selected group but has <strong style="color:#ef4444;">zero recognition activity</strong> in the last ${DATA.meta.days} days.
+    <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:16px;margin:12px 0;">
+      <div style="font-weight:600;color:#dc2626;margin-bottom:8px;">Disengaged</div>
+      <div style="font-size:12px;color:#475569;line-height:1.6;">
+        This person is a member of the selected group but has <strong style="color:#dc2626;">zero recognition activity</strong> in the last ${DATA.meta.days} days.
         <br><br>
         No wambis sent or received. Not visible in the culture network.
       </div>
